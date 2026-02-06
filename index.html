@@ -3,47 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Profesional - Digital Resume</title>
+    <title>CV Profesional - Modern Edition</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
-        .container { max-width: 850px; margin: 40px auto; background: #fff; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 10px; }
+        /* Variabel Warna & Animasi */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --text-main: #2d3436;
+        }
+
+        /* Animasi Muncul */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--primary-gradient); 
+            background-attachment: fixed;
+            color: var(--text-main); 
+        }
+
+        .container { 
+            max-width: 850px; 
+            margin: 40px auto; 
+            background: var(--glass-bg); 
+            padding: 40px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+            border-radius: 20px; 
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out; /* Animasi Utama */
+        }
         
-        /* Header & Foto Profil */
-        header { display: flex; align-items: center; border-bottom: 3px solid #2c3e50; padding-bottom: 20px; margin-bottom: 30px; gap: 25px; }
+        /* Header dengan Efek Hover */
+        header { 
+            display: flex; 
+            align-items: center; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 30px; 
+            margin-bottom: 30px; 
+            gap: 25px; 
+        }
+
         .profile-img { 
             width: 150px; 
             height: 150px; 
-            border-radius: 50%; 
+            border-radius: 20px; /* Bentuk kotak membulat unik */
             object-fit: cover; 
-            border: 4px solid #3498db;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 5px solid #fff;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            animation: slideInLeft 1.2s ease-out;
         }
-        .header-text h1 { margin: 0; color: #2c3e50; font-size: 2.2em; letter-spacing: -1px; }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .header-text h1 { 
+            margin: 0; 
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em; 
+            font-weight: 800;
+        }
         
-        /* Info Kontak */
         .contact-info { margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9em; }
-        .contact-info span { display: flex; align-items: center; gap: 10px; }
-        .contact-info i { color: #3498db; width: 20px; text-align: center; }
-        .contact-info a { text-decoration: none; color: #333; }
+        .contact-info span { display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .contact-info span:hover { transform: translateX(5px); color: #667eea; }
+        .contact-info i { color: #764ba2; width: 20px; }
 
         section { margin-bottom: 35px; }
-        h2 { color: #2980b9; text-transform: uppercase; font-size: 1.1em; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        h2 { 
+            color: #764ba2; 
+            font-size: 1.2em; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            background: rgba(118, 75, 162, 0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
 
-        /* Tabel Sertifikasi */
-        .table-container { overflow-x: auto; }
+        /* Tabel Sertifikasi Modern */
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        table th, table td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
-        table th { background-color: #f8f9fa; color: #2c3e50; font-weight: 600; }
+        table th { text-align: left; padding: 12px; background: #f8f9fa; border-radius: 5px; }
+        table td { padding: 12px; border-bottom: 1px solid #eee; transition: 0.3s; }
+        table tr:hover td { background: rgba(102, 126, 234, 0.05); }
         
-        /* Keahlian Tags */
-        .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .tag { background: #2c3e50; color: white; padding: 5px 14px; border-radius: 6px; font-size: 0.85em; }
+        /* Keahlian Tags Animasi */
+        .skills-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { 
+            background: var(--primary-gradient); 
+            color: white; 
+            padding: 6px 16px; 
+            border-radius: 50px; 
+            font-size: 0.85em; 
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .tag:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4); 
+        }
 
-        /* Responsif Mobile */
         @media (max-width: 650px) {
             header { flex-direction: column; text-align: center; }
-            .contact-info { grid-template-columns: 1fr; text-align: left; }
+            .contact-info { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -51,26 +128,26 @@
 
 <div class="container">
     <header>
-        <img src="Gemini_Generated_Image_fqn7x9fqn7x9fqn7.png" alt="Foto Profil Berjas" class="profile-img">
+        <img src="Gemini_Generated_Image_fqn7x9fqn7x9fqn7.jpg" alt="Foto Profil" class="profile-img">
         <div class="header-text">
             <h1>NAMA LENGKAP ANDA</h1>
             <div class="contact-info">
                 <span><i class="fas fa-envelope"></i> email@domain.com</span>
                 <span><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</span>
-                <span><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/username</a></span>
-                <span><i class="fab fa-github"></i> <a href="#">github.com/username</a></span>
+                <span><i class="fab fa-linkedin"></i> linkedin.com/in/username</span>
+                <span><i class="fab fa-github"></i> github.com/username</span>
             </div>
         </div>
     </header>
 
     <section>
-        <h2><i class="fas fa-user-tie"></i> Tentang Saya</h2>
+        <h2><i class="fas fa-rocket"></i> Tentang Saya</h2>
         <p>Saya adalah seorang profesional yang berdedikasi tinggi dengan fokus pada efisiensi kerja dan hasil yang optimal. Memiliki semangat belajar yang besar untuk menguasai teknologi terbaru dalam industri digital.</p>
     </section>
 
     <section>
-        <h2><i class="fas fa-certificate"></i> Sertifikasi</h2>
-        <div class="table-container">
+        <h2><i class="fas fa-award"></i> Sertifikasi</h2>
+        <div style="overflow-x: auto;">
             <table>
                 <thead>
                     <tr>
@@ -96,7 +173,7 @@
     </section>
 
     <section>
-        <h2><i class="fas fa-tools"></i> Keahlian Teknis</h2>
+        <h2><i class="fas fa-code"></i> Keahlian Teknis</h2>
         <div class="skills-tags">
             <span class="tag">HTML5 & CSS3</span>
             <span class="tag">JavaScript</span>
