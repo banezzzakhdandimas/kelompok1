@@ -9,30 +9,41 @@
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; }
         .container { max-width: 850px; margin: 40px auto; background: #fff; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 10px; }
         
-        /* Header & Foto */
-        header { display: flex; align-items: center; border-bottom: 3px solid #2c3e50; padding-bottom: 20px; margin-bottom: 30px; gap: 20px; }
-        .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #3498db; }
-        .header-text h1 { margin: 0; color: #2c3e50; font-size: 2.2em; }
-        .contact-info { margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; font-size: 0.9em; }
-        .contact-info i { color: #3498db; width: 20px; }
+        /* Header & Foto Profil */
+        header { display: flex; align-items: center; border-bottom: 3px solid #2c3e50; padding-bottom: 20px; margin-bottom: 30px; gap: 25px; }
+        .profile-img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid #3498db;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .header-text h1 { margin: 0; color: #2c3e50; font-size: 2.2em; letter-spacing: -1px; }
+        
+        /* Info Kontak */
+        .contact-info { margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9em; }
+        .contact-info span { display: flex; align-items: center; gap: 10px; }
+        .contact-info i { color: #3498db; width: 20px; text-align: center; }
         .contact-info a { text-decoration: none; color: #333; }
 
-        section { margin-bottom: 30px; }
-        h2 { color: #2980b9; text-transform: uppercase; font-size: 1.1em; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        section { margin-bottom: 35px; }
+        h2 { color: #2980b9; text-transform: uppercase; font-size: 1.1em; border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
 
         /* Tabel Sertifikasi */
+        .table-container { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         table th, table td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
-        table th { background-color: #f8f9fa; color: #2c3e50; }
+        table th { background-color: #f8f9fa; color: #2c3e50; font-weight: 600; }
         
-        /* Skill Tags */
+        /* Keahlian Tags */
         .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .tag { background: #2c3e50; color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.85em; }
+        .tag { background: #2c3e50; color: white; padding: 5px 14px; border-radius: 6px; font-size: 0.85em; }
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
+        /* Responsif Mobile */
+        @media (max-width: 650px) {
             header { flex-direction: column; text-align: center; }
-            .contact-info { grid-template-columns: 1fr; }
+            .contact-info { grid-template-columns: 1fr; text-align: left; }
         }
     </style>
 </head>
@@ -40,9 +51,9 @@
 
 <div class="container">
     <header>
-        <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
+        <img src="foto-profil.jpg" alt="Foto Profil Berjas" class="profile-img">
         <div class="header-text">
-            <h1>Nama Lengkap Anda</h1>
+            <h1>NAMA LENGKAP ANDA</h1>
             <div class="contact-info">
                 <span><i class="fas fa-envelope"></i> email@domain.com</span>
                 <span><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</span>
@@ -53,62 +64,45 @@
     </header>
 
     <section>
-        <h2><i class="fas fa-user"></i> Tentang Saya</h2>
-        <p>Saya adalah seorang pengembang perangkat lunak yang berdedikasi tinggi dengan fokus pada efisiensi kode dan pengalaman pengguna yang optimal. Berpengalaman dalam membangun aplikasi web modern.</p>
-    </section>
-
-    <section>
-        <h2><i class="fas fa-briefcase"></i> Pengalaman Kerja</h2>
-        <div style="margin-bottom: 15px;">
-            <strong>Senior Web Developer - PT Global Tech</strong> 
-            <br><small>2021 - Sekarang</small>
-            <ul>
-                <li>Memimpin tim pengembangan dalam merancang arsitektur microservices.</li>
-                <li>Meningkatkan performa load-time website sebesar 40%.</li>
-            </ul>
-        </div>
+        <h2><i class="fas fa-user-tie"></i> Tentang Saya</h2>
+        <p>Saya adalah seorang profesional yang berdedikasi tinggi dengan fokus pada efisiensi kerja dan hasil yang optimal. Memiliki semangat belajar yang besar untuk menguasai teknologi terbaru dalam industri digital.</p>
     </section>
 
     <section>
         <h2><i class="fas fa-certificate"></i> Sertifikasi</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nama Sertifikat</th>
-                    <th>Penerbit</th>
-                    <th>Tahun</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Google IT Automation with Python</td>
-                    <td>Coursera</td>
-                    <td>2023</td>
-                </tr>
-                <tr>
-                    <td>AWS Certified Solutions Architect</td>
-                    <td>Amazon Web Services</td>
-                    <td>2022</td>
-                </tr>
-                <tr>
-                    <td>Responsive Web Design</td>
-                    <td>FreeCodeCamp</td>
-                    <td>2021</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Sertifikat</th>
+                        <th>Penerbit</th>
+                        <th>Tahun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google IT Automation with Python</td>
+                        <td>Coursera</td>
+                        <td>2023</td>
+                    </tr>
+                    <tr>
+                        <td>Responsive Web Design</td>
+                        <td>FreeCodeCamp</td>
+                        <td>2021</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <section>
         <h2><i class="fas fa-tools"></i> Keahlian Teknis</h2>
         <div class="skills-tags">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript (ES6+)</span>
-            <span class="tag">React.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">SQL / NoSQL</span>
-            <span class="tag">Docker</span>
+            <span class="tag">HTML5 & CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">GitHub Workflow</span>
+            <span class="tag">Microsoft Office</span>
+            <span class="tag">UI/UX Design</span>
         </div>
     </section>
 </div>
